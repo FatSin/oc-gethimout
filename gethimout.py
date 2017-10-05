@@ -1,3 +1,4 @@
+import random
 import pygame as pg
 from pygame.locals import *
 
@@ -25,8 +26,9 @@ def display_level(level):
         wall = pg.transform.scale(wall,(int(650/15),int(480/15)))
         macgyver = pg.transform.scale(macgyver,(int(650/15),int(480/15)))
         guardian = pg.transform.scale(guardian,(int(650/15),int(480/15)))
-        num_line=0
-
+        #Static positioning of the labyrinth and the characters
+        num_line = 0
+        empty_cells = [] #List of empty cells
         for line in level :
                 num_col=0
                 y=num_line*480/15
@@ -38,11 +40,21 @@ def display_level(level):
                                 window.blit(macgyver,(x,y))
                         if cell=="f":
                                 window.blit(guardian,(x,y))
-                        else:
-                                pass
+                        elif cell=="0":
+                                empty_cells.append([x,y])                                
                         num_col += 1
                 num_line += 1
-           
+        #Random positioning of the obects
+        position1 = random.randint(0,len(empty_cells))
+        position2 = random.randint(0,len(empty_cells))
+        position3 = random.randint(0,len(empty_cells))
+        #print(position1,position2,position3)
+        #print(empty_cells)
+        #print(len(empty_cells))
+        window.blit(macgyver,empty_cells[position1])
+        window.blit(macgyver,empty_cells[position2])
+        window.blit(macgyver,empty_cells[position3])
+        
         pg.display.flip()      
         while keep_open :
                 for event in pg.event.get(): 
