@@ -22,10 +22,16 @@ def display_level(level):
         wall = pg.image.load("wall.png").convert()
         macgyver = pg.image.load("macgyver.png").convert_alpha()
         guardian = pg.image.load("guardian.png").convert_alpha()
+        needle = pg.image.load("needle.png").convert_alpha()
+        ether = pg.image.load("ether.png").convert_alpha()
+        tube = pg.image.load("tube.png").convert_alpha()
         #Redimensioning of the images, to adapt to the window size
         wall = pg.transform.scale(wall,(int(650/15),int(480/15)))
         macgyver = pg.transform.scale(macgyver,(int(650/15),int(480/15)))
         guardian = pg.transform.scale(guardian,(int(650/15),int(480/15)))
+        needle = pg.transform.scale(needle,(int(650/15),int(480/15)))
+        ether = pg.transform.scale(ether,(int(650/15),int(480/15)))
+        tube = pg.transform.scale(tube,(int(650/15),int(480/15)))
         #Static positioning of the labyrinth and the characters
         num_line = 0
         empty_cells = [] #List of empty cells
@@ -51,9 +57,9 @@ def display_level(level):
         #print(position1,position2,position3)
         #print(empty_cells)
         #print(len(empty_cells))
-        window.blit(macgyver,empty_cells[position1])
-        window.blit(macgyver,empty_cells[position2])
-        window.blit(macgyver,empty_cells[position3])
+        window.blit(needle,empty_cells[position1])
+        window.blit(ether,empty_cells[position2])
+        window.blit(tube,empty_cells[position3])
         
         pg.display.flip()      
         while keep_open :
