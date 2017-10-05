@@ -21,6 +21,10 @@ def display_level(level):
         wall = pg.image.load("wall.png").convert()
         macgyver = pg.image.load("macgyver.png").convert_alpha()
         guardian = pg.image.load("guardian.png").convert_alpha()
+        #Redimensioning of the images, to adapt to the window size
+        wall = pg.transform.scale(wall,(int(650/15),int(480/15)))
+        macgyver = pg.transform.scale(macgyver,(int(650/15),int(480/15)))
+        guardian = pg.transform.scale(guardian,(int(650/15),int(480/15)))
         num_line=0
 
         for line in level :
