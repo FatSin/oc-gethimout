@@ -1,0 +1,481 @@
+************* Module gethimout
+W:  6, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C:  6, 0: Exactly one space required around assignment
+	level=[]
+      ^ (bad-whitespace)
+W:  7, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W:  8, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W:  9, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C:  9, 0: Exactly one space required around assignment
+			lines=[]
+        ^ (bad-whitespace)
+W: 10, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W: 11, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W: 12, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W: 13, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+W: 16, 0: Found indentation with tabs instead of spaces (mixed-indentation)
+C: 18, 0: Exactly one space required after comma
+def display_level(window,level):
+                        ^ (bad-whitespace)
+W: 19, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+W: 20, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+W: 21, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 21, 0: Exactly one space required after comma
+        window.blit(background,(0,0))
+                              ^ (bad-whitespace)
+C: 21, 0: Exactly one space required after comma
+        window.blit(background,(0,0))
+                                 ^ (bad-whitespace)
+C: 22, 0: Trailing whitespace (trailing-whitespace)
+W: 23, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+W: 24, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+W: 25, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+W: 26, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 28, 0: Trailing whitespace (trailing-whitespace)
+W: 29, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 29, 0: Exactly one space required after comma
+        wall = pg.transform.scale(wall,(int(650/15),int(480/15)))
+                                      ^ (bad-whitespace)
+C: 29, 0: Exactly one space required after comma
+        wall = pg.transform.scale(wall,(int(650/15),int(480/15)))
+                                                   ^ (bad-whitespace)
+W: 30, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 30, 0: Exactly one space required after comma
+        start = pg.transform.scale(start,(int(650/15),int(480/15)))
+                                        ^ (bad-whitespace)
+C: 30, 0: Exactly one space required after comma
+        start = pg.transform.scale(start,(int(650/15),int(480/15)))
+                                                     ^ (bad-whitespace)
+W: 31, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 31, 0: Exactly one space required after comma
+        guardian = pg.transform.scale(guardian,(int(650/15),int(480/15)))
+                                              ^ (bad-whitespace)
+C: 31, 0: Exactly one space required after comma
+        guardian = pg.transform.scale(guardian,(int(650/15),int(480/15)))
+                                                           ^ (bad-whitespace)
+W: 32, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 32, 0: Exactly one space required after comma
+        macgyver = pg.transform.scale(macgyver,(int(650/15),int(480/15)))
+                                              ^ (bad-whitespace)
+C: 32, 0: Exactly one space required after comma
+        macgyver = pg.transform.scale(macgyver,(int(650/15),int(480/15)))
+                                                           ^ (bad-whitespace)
+C: 33, 0: Trailing whitespace (trailing-whitespace)
+W: 35, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+W: 36, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+W: 37, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+W: 38, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 38, 0: No space allowed before :
+        for line in level :
+                          ^ (bad-whitespace)
+W: 39, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C: 39, 0: Exactly one space required around assignment
+                num_col=0
+                       ^ (bad-whitespace)
+W: 40, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C: 40, 0: Exactly one space required around assignment
+                y=num_line*int(480/15)
+                 ^ (bad-whitespace)
+W: 41, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C: 41, 0: No space allowed before :
+                for cell in line :
+                                 ^ (bad-whitespace)
+W: 42, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+W: 43, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C: 43, 0: Exactly one space required around comparison
+                        if cell=="w":
+                               ^^ (bad-whitespace)
+C: 44, 0: Trailing whitespace (trailing-whitespace)
+W: 44, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+C: 44, 0: Exactly one space required after comma
+                                window.blit(wall,(x,y))  
+                                                ^ (bad-whitespace)
+C: 44, 0: Exactly one space required after comma
+                                window.blit(wall,(x,y))  
+                                                   ^ (bad-whitespace)
+W: 45, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C: 45, 0: Exactly one space required around comparison
+                        if cell=="d":
+                               ^^ (bad-whitespace)
+W: 46, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+C: 46, 0: Exactly one space required after comma
+                                window.blit(start,(x,y))
+                                                 ^ (bad-whitespace)
+C: 46, 0: Exactly one space required after comma
+                                window.blit(start,(x,y))
+                                                    ^ (bad-whitespace)
+W: 47, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+W: 48, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+C: 48, 0: Exactly one space required after comma
+                                position_macgyver.center = (x+int((640/30)),y+int((480/30)))
+                                                                           ^ (bad-whitespace)
+W: 49, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C: 49, 0: Exactly one space required around comparison
+                        if cell=="f":
+                               ^^ (bad-whitespace)
+W: 50, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+C: 50, 0: Exactly one space required after comma
+                                window.blit(guardian,(x,y))
+                                                    ^ (bad-whitespace)
+C: 50, 0: Exactly one space required after comma
+                                window.blit(guardian,(x,y))
+                                                       ^ (bad-whitespace)
+W: 51, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+C: 51, 0: Exactly one space required after comma
+                                position_guardian = [x,y]
+                                                      ^ (bad-whitespace)
+W: 52, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C: 52, 0: Exactly one space required around comparison
+                        if cell=="n":
+                               ^^ (bad-whitespace)
+W: 53, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+W: 54, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C: 54, 0: Exactly one space required around comparison
+                        elif cell=="0":
+                                 ^^ (bad-whitespace)
+C: 55, 0: Trailing whitespace (trailing-whitespace)
+W: 55, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+C: 55, 0: Exactly one space required after comma
+                                empty_cells.append([x,y])                                
+                                                     ^ (bad-whitespace)
+W: 56, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+W: 57, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+W: 59, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+W: 60, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 60, 0: Exactly one space required after comma
+        elements = [macgyver,position_macgyver, empty_cells, position_guardian]
+                            ^ (bad-whitespace)
+W: 61, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 62, 0: Trailing whitespace (trailing-whitespace)
+C: 65, 0: Exactly one space required after comma
+current_window = pg.display.set_mode((640,480), RESIZABLE)
+                                         ^ (bad-whitespace)
+W: 72, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+W: 73, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+W: 75, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+W: 76, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C: 76, 0: Exactly one space required after comma
+                self.window.blit(self.elements_level[0],self.elements_level[1].topleft)
+                                                       ^ (bad-whitespace)
+W: 77, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+W: 79, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C: 79, 0: Exactly one space required after comma
+                self.position1 = random.randint(0,len(self.elements_level[2]))
+                                                 ^ (bad-whitespace)
+W: 80, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C: 80, 0: Exactly one space required after comma
+                self.position2 = random.randint(0,len(self.elements_level[2]))
+                                                 ^ (bad-whitespace)
+W: 81, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C: 81, 0: Exactly one space required after comma
+                self.position3 = random.randint(0,len(self.elements_level[2]))
+                                                 ^ (bad-whitespace)
+C: 84, 0: Trailing whitespace (trailing-whitespace)
+W: 85, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+W: 86, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+W: 87, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+W: 89, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C: 90, 0: Trailing whitespace (trailing-whitespace)
+W: 91, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+W: 93, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C: 93, 0: Exactly one space required around assignment
+                list_coor=list(self.elements_level[1].topleft)
+                         ^ (bad-whitespace)
+W: 94, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+W: 95, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C: 96, 0: Trailing whitespace (trailing-whitespace)
+C: 97, 0: Line too long (136/100) (line-too-long)
+W: 97, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C: 97, 0: Exactly one space required after comma
+                if direction == "up" and ([x,y-int(480/15)] in self.elements_level[2] or [x,y-int(480/15)] == self.elements_level[3] ) :
+                                            ^ (bad-whitespace)
+C: 97, 0: Exactly one space required after comma
+                if direction == "up" and ([x,y-int(480/15)] in self.elements_level[2] or [x,y-int(480/15)] == self.elements_level[3] ) :
+                                                                                           ^ (bad-whitespace)
+C: 97, 0: No space allowed before bracket
+                if direction == "up" and ([x,y-int(480/15)] in self.elements_level[2] or [x,y-int(480/15)] == self.elements_level[3] ) :
+                                                                                                                                     ^ (bad-whitespace)
+C: 97, 0: No space allowed before :
+                if direction == "up" and ([x,y-int(480/15)] in self.elements_level[2] or [x,y-int(480/15)] == self.elements_level[3] ) :
+                                                                                                                                       ^ (bad-whitespace)
+W: 99, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C: 99, 0: Exactly one space required after comma
+                        self.elements_level[1] = self.elements_level[1].move(0,-int(480/15))
+                                                                              ^ (bad-whitespace)
+W:100, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:101, 0: Line too long (140/100) (line-too-long)
+W:101, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:101, 0: Exactly one space required after comma
+                elif direction == "down" and ([x,y+int(480/15)] in self.elements_level[2] or [x,y+int(480/15)] == self.elements_level[3] ) :
+                                                ^ (bad-whitespace)
+C:101, 0: Exactly one space required after comma
+                elif direction == "down" and ([x,y+int(480/15)] in self.elements_level[2] or [x,y+int(480/15)] == self.elements_level[3] ) :
+                                                                                               ^ (bad-whitespace)
+C:101, 0: No space allowed before bracket
+                elif direction == "down" and ([x,y+int(480/15)] in self.elements_level[2] or [x,y+int(480/15)] == self.elements_level[3] ) :
+                                                                                                                                         ^ (bad-whitespace)
+C:101, 0: No space allowed before :
+                elif direction == "down" and ([x,y+int(480/15)] in self.elements_level[2] or [x,y+int(480/15)] == self.elements_level[3] ) :
+                                                                                                                                           ^ (bad-whitespace)
+W:103, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:103, 0: Exactly one space required after comma
+                        self.elements_level[1] = self.elements_level[1].move(0,int(480/15))
+                                                                              ^ (bad-whitespace)
+C:104, 0: Trailing whitespace (trailing-whitespace)
+W:105, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:106, 0: Line too long (140/100) (line-too-long)
+W:106, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:106, 0: Exactly one space required after comma
+                elif direction == "left" and ([x-int(640/15),y] in self.elements_level[2] or [x-int(640/15),y] == self.elements_level[3] ) :
+                                                            ^ (bad-whitespace)
+C:106, 0: Exactly one space required after comma
+                elif direction == "left" and ([x-int(640/15),y] in self.elements_level[2] or [x-int(640/15),y] == self.elements_level[3] ) :
+                                                                                                           ^ (bad-whitespace)
+C:106, 0: No space allowed before bracket
+                elif direction == "left" and ([x-int(640/15),y] in self.elements_level[2] or [x-int(640/15),y] == self.elements_level[3] ) :
+                                                                                                                                         ^ (bad-whitespace)
+C:106, 0: No space allowed before :
+                elif direction == "left" and ([x-int(640/15),y] in self.elements_level[2] or [x-int(640/15),y] == self.elements_level[3] ) :
+                                                                                                                                           ^ (bad-whitespace)
+W:108, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:108, 0: Exactly one space required after comma
+                        self.elements_level[1] = self.elements_level[1].move(-int(640/15),0)
+                                                                                         ^ (bad-whitespace)
+C:109, 0: Trailing whitespace (trailing-whitespace)
+W:110, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:111, 0: Line too long (145/100) (line-too-long)
+W:111, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:111, 0: Exactly one space required after comma
+                elif direction == "right" and (([x+int(640/15),y] in self.elements_level[2]) or ([x+int(640/15),y] == self.elements_level[3]) ) :
+                                                              ^ (bad-whitespace)
+C:111, 0: Exactly one space required after comma
+                elif direction == "right" and (([x+int(640/15),y] in self.elements_level[2]) or ([x+int(640/15),y] == self.elements_level[3]) ) :
+                                                                                                               ^ (bad-whitespace)
+C:111, 0: No space allowed before bracket
+                elif direction == "right" and (([x+int(640/15),y] in self.elements_level[2]) or ([x+int(640/15),y] == self.elements_level[3]) ) :
+                                                                                                                                              ^ (bad-whitespace)
+C:111, 0: No space allowed before :
+                elif direction == "right" and (([x+int(640/15),y] in self.elements_level[2]) or ([x+int(640/15),y] == self.elements_level[3]) ) :
+                                                                                                                                                ^ (bad-whitespace)
+W:113, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:113, 0: Exactly one space required after comma
+                        self.elements_level[1] = self.elements_level[1].move(int(640/15),0)
+                                                                                        ^ (bad-whitespace)
+C:114, 0: Trailing whitespace (trailing-whitespace)
+W:115, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+W:118, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:118, 0: Exactly one space required after comma
+        def display_moves(self,macgyver, needle, ether, tube, init):
+                              ^ (bad-whitespace)
+W:119, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:119, 0: Exactly one space required around assignment
+                list_coor=list(self.elements_level[1].topleft)
+                         ^ (bad-whitespace)
+C:120, 0: Trailing whitespace (trailing-whitespace)
+W:121, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:121, 0: Exactly one space required around comparison
+                if list_coor != self.elements_level[2][self.position1] and self.got_needle==0 :
+                                                                                          ^^ (bad-whitespace)
+C:121, 0: No space allowed before :
+                if list_coor != self.elements_level[2][self.position1] and self.got_needle==0 :
+                                                                                              ^ (bad-whitespace)
+W:122, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:122, 0: Exactly one space required after comma
+                        self.window.blit(needle,self.elements_level[2][self.position1])
+                                               ^ (bad-whitespace)
+W:123, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+W:124, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:125, 0: Trailing whitespace (trailing-whitespace)
+W:126, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:126, 0: Exactly one space required around comparison
+                if list_coor != self.elements_level[2][self.position2] and self.got_ether==0:
+                                                                                         ^^ (bad-whitespace)
+W:127, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:127, 0: Exactly one space required after comma
+                        self.window.blit(ether,self.elements_level[2][self.position2])
+                                              ^ (bad-whitespace)
+W:128, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+W:129, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:130, 0: Trailing whitespace (trailing-whitespace)
+W:131, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:131, 0: Exactly one space required around comparison
+                if list_coor != self.elements_level[2][self.position3] and self.got_tube==0:
+                                                                                        ^^ (bad-whitespace)
+W:132, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:132, 0: Exactly one space required after comma
+                        self.window.blit(tube,self.elements_level[2][self.position3])
+                                             ^ (bad-whitespace)
+W:133, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+W:134, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+W:136, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:137, 0: Trailing whitespace (trailing-whitespace)
+W:138, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:138, 0: Exactly one space required around comparison
+                        if self.got_needle == 1 and self.got_ether==1 and self.got_tube==1:
+                                                                  ^^ (bad-whitespace)
+C:138, 0: Exactly one space required around comparison
+                        if self.got_needle == 1 and self.got_ether==1 and self.got_tube==1:
+                                                                                       ^^ (bad-whitespace)
+W:140, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+C:140, 0: Exactly one space required around assignment
+                                self.state="won"
+                                          ^ (bad-whitespace)
+W:141, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+W:143, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+C:143, 0: Exactly one space required around assignment
+                                self.state="dead"
+                                          ^ (bad-whitespace)
+C:144, 0: Trailing whitespace (trailing-whitespace)
+W:145, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:145, 0: Exactly one space required after comma
+                self.window.blit(macgyver,list_coor)
+                                         ^ (bad-whitespace)
+W:150, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:151, 0: Trailing whitespace (trailing-whitespace)
+C:162, 0: Exactly one space required after comma
+macgyver = pg.transform.scale(macgyver,(int(650/15),int(480/15)))
+                                      ^ (bad-whitespace)
+C:162, 0: Exactly one space required after comma
+macgyver = pg.transform.scale(macgyver,(int(650/15),int(480/15)))
+                                                   ^ (bad-whitespace)
+C:163, 0: Exactly one space required after comma
+needle = pg.transform.scale(needle,(int(650/15),int(480/15)))
+                                  ^ (bad-whitespace)
+C:163, 0: Exactly one space required after comma
+needle = pg.transform.scale(needle,(int(650/15),int(480/15)))
+                                               ^ (bad-whitespace)
+C:164, 0: Exactly one space required after comma
+ether = pg.transform.scale(ether,(int(650/15),int(480/15)))
+                                ^ (bad-whitespace)
+C:164, 0: Exactly one space required after comma
+ether = pg.transform.scale(ether,(int(650/15),int(480/15)))
+                                             ^ (bad-whitespace)
+C:165, 0: Exactly one space required after comma
+tube = pg.transform.scale(tube,(int(650/15),int(480/15)))
+                              ^ (bad-whitespace)
+C:165, 0: Exactly one space required after comma
+tube = pg.transform.scale(tube,(int(650/15),int(480/15)))
+                                           ^ (bad-whitespace)
+C:166, 0: Exactly one space required after comma
+youwin = pg.transform.scale(youwin,(640,480))
+                                  ^ (bad-whitespace)
+C:166, 0: Exactly one space required after comma
+youwin = pg.transform.scale(youwin,(640,480))
+                                       ^ (bad-whitespace)
+C:167, 0: Exactly one space required after comma
+youlose = pg.transform.scale(youlose,(640,480))
+                                    ^ (bad-whitespace)
+C:167, 0: Exactly one space required after comma
+youlose = pg.transform.scale(youlose,(640,480))
+                                         ^ (bad-whitespace)
+C:171, 0: Trailing whitespace (trailing-whitespace)
+C:173, 0: Exactly one space required after comma
+MacGyver.display_moves(macgyver, needle, ether, tube,1)
+                                                    ^ (bad-whitespace)
+C:175, 0: No space allowed before :
+while keep_open :
+                ^ (bad-whitespace)
+C:176, 0: Trailing whitespace (trailing-whitespace)
+W:176, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+W:177, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:177, 0: No space allowed before :
+                if event.type == QUIT :
+                                      ^ (bad-whitespace)
+W:178, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:179, 0: Trailing whitespace (trailing-whitespace)
+W:179, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:179, 0: Exactly one space required around comparison
+                if MacGyver.state=="alive" :        
+                                 ^^ (bad-whitespace)
+C:179, 0: No space allowed before :
+                if MacGyver.state=="alive" :        
+                                           ^ (bad-whitespace)
+C:180, 0: Trailing whitespace (trailing-whitespace)
+W:180, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+W:181, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+W:182, 0: Bad indentation. Found 40 spaces, expected 20 (bad-indentation)
+W:183, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+W:184, 0: Bad indentation. Found 40 spaces, expected 20 (bad-indentation)
+W:185, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+W:186, 0: Bad indentation. Found 40 spaces, expected 20 (bad-indentation)
+W:187, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+W:188, 0: Bad indentation. Found 40 spaces, expected 20 (bad-indentation)
+C:189, 0: Trailing whitespace (trailing-whitespace)
+W:190, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+W:191, 0: Bad indentation. Found 32 spaces, expected 16 (bad-indentation)
+W:192, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:192, 0: Exactly one space required around comparison
+                elif MacGyver.state=="dead":
+                                   ^^ (bad-whitespace)
+W:193, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:193, 0: Exactly one space required after comma
+                        current_window.blit(youlose,(0,0))
+                                                   ^ (bad-whitespace)
+C:193, 0: Exactly one space required after comma
+                        current_window.blit(youlose,(0,0))
+                                                      ^ (bad-whitespace)
+W:194, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+W:195, 0: Bad indentation. Found 16 spaces, expected 8 (bad-indentation)
+C:195, 0: Exactly one space required around comparison
+                elif MacGyver.state=="won":
+                                   ^^ (bad-whitespace)
+W:196, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:196, 0: Exactly one space required after comma
+                        current_window.blit(youwin,(0,0))
+                                                  ^ (bad-whitespace)
+C:196, 0: Exactly one space required after comma
+                        current_window.blit(youwin,(0,0))
+                                                     ^ (bad-whitespace)
+W:197, 0: Bad indentation. Found 24 spaces, expected 12 (bad-indentation)
+C:  1, 0: Missing module docstring (missing-docstring)
+W:  3, 0: Wildcard import pygame.locals (wildcard-import)
+C:  5, 0: Missing function docstring (missing-docstring)
+C:  7,28: Invalid variable name "f" (invalid-name)
+C: 18, 0: Missing function docstring (missing-docstring)
+W: 26, 8: Redefining name 'macgyver' from outer scope (line 155) (redefined-outer-name)
+R: 18, 0: Too many local variables (17/15) (too-many-locals)
+E: 20,21: Too many positional arguments for lambda call (too-many-function-args)
+C: 40,16: Invalid variable name "y" (invalid-name)
+C: 42,24: Invalid variable name "x" (invalid-name)
+C: 63, 0: Invalid constant name "current_level" (invalid-name)
+C: 65, 0: Invalid constant name "current_window" (invalid-name)
+E: 65,48: Undefined variable 'RESIZABLE' (undefined-variable)
+C: 71, 0: Missing class docstring (missing-docstring)
+R: 71, 0: Too many instance attributes (9/7) (too-many-instance-attributes)
+C: 91, 8: Missing method docstring (missing-docstring)
+C: 94,16: Invalid variable name "x" (invalid-name)
+C: 95,16: Invalid variable name "y" (invalid-name)
+C:118, 8: Missing method docstring (missing-docstring)
+W:118,31: Redefining name 'macgyver' from outer scope (line 155) (redefined-outer-name)
+W:118,41: Redefining name 'needle' from outer scope (line 156) (redefined-outer-name)
+W:118,49: Redefining name 'ether' from outer scope (line 157) (redefined-outer-name)
+W:118,56: Redefining name 'tube' from outer scope (line 158) (redefined-outer-name)
+R:118, 8: Too many arguments (6/5) (too-many-arguments)
+W:118,62: Unused argument 'init' (unused-argument)
+C:153, 0: Invalid constant name "MacGyver" (invalid-name)
+C:155, 0: Invalid constant name "macgyver" (invalid-name)
+C:156, 0: Invalid constant name "needle" (invalid-name)
+C:157, 0: Invalid constant name "ether" (invalid-name)
+C:158, 0: Invalid constant name "tube" (invalid-name)
+C:159, 0: Invalid constant name "youwin" (invalid-name)
+C:160, 0: Invalid constant name "youlose" (invalid-name)
+C:162, 0: Invalid constant name "macgyver" (invalid-name)
+C:163, 0: Invalid constant name "needle" (invalid-name)
+C:164, 0: Invalid constant name "ether" (invalid-name)
+C:165, 0: Invalid constant name "tube" (invalid-name)
+C:166, 0: Invalid constant name "youwin" (invalid-name)
+C:167, 0: Invalid constant name "youlose" (invalid-name)
+C:172, 0: Invalid constant name "keep_open" (invalid-name)
+E:177,33: Undefined variable 'QUIT' (undefined-variable)
+E:180,41: Undefined variable 'KEYDOWN' (undefined-variable)
+E:181,48: Undefined variable 'K_UP' (undefined-variable)
+E:183,48: Undefined variable 'K_DOWN' (undefined-variable)
+E:185,48: Undefined variable 'K_LEFT' (undefined-variable)
+E:187,48: Undefined variable 'K_RIGHT' (undefined-variable)
+W:  3, 0: Unused import color from wildcard import (unused-wildcard-import)
+W:  3, 0: Unused import Color from wildcard import (unused-wildcard-import)
+W:  3, 0: Unused import Rect from wildcard import (unused-wildcard-import)
+
+----------------------------------------------------------------------
+Your code has been rated at -13.38/10 (previous run: -13.38/10, +0.00)
+
