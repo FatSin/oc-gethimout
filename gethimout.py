@@ -2,16 +2,16 @@
 # -*- coding: Utf-8 -*
 
 """"
-Get Him Out !" game :
+"Get Him Out !" game :
 
 Help Macgyver escape from the labyrinth by collecting 3 items to put the Guardian to sleep.
 """
 
-import random
-
 import pygame as pg
 from pygame.locals import *
 
+from classes import *
+from constants import *
 
 pg.init()
 
@@ -20,7 +20,7 @@ def create_level():
 
     as multi-dimensional list."""
     level = []
-    with open("level1.txt") as file:
+    with open(LEVEL_FILE) as file:
         for line in file:
             lines = []
             for cell in line:
@@ -35,33 +35,33 @@ def create_level():
 def display_level(window, level):
     """2D-display of the generated labyrinth."""
 
-    background = pg.image.load("background.jpg").convert()
-    background = pg.transform.scale(background, (640, 480))
+    background = pg.image.load(image_background).convert()
+    background = pg.transform.scale(background, (WIDTH, HEIGHT))
     window.blit(background, (0, 0))
-    wall = pg.image.load("wall.png").convert()
-    start = pg.image.load("start.png").convert_alpha()
-    guardian = pg.image.load("guardian.png").convert_alpha()
-    mac = pg.image.load("macgyver.png").convert_alpha()
+    wall = pg.image.load(image_wall).convert()
+    start = pg.image.load(image_start).convert_alpha()
+    guardian = pg.image.load(image_guardian).convert_alpha()
+    mac = pg.image.load(image_macgyver).convert_alpha()
     #Redimensioning of the images, to adapt to the window size
-    wall = pg.transform.scale(wall, (int(650/15), int(480/15)))
-    start = pg.transform.scale(start, (int(650/15), int(480/15)))
-    guardian = pg.transform.scale(guardian, (int(650/15), int(480/15)))
-    mac = pg.transform.scale(mac, (int(650/15), int(480/15)))
+    wall = pg.transform.scale(wall, (int((WIDTH + 10)/SIDE), int(HEIGHT/SIDE)))
+    start = pg.transform.scale(start, (int((WIDTH + 10)/SIDE), int(HEIGHT/SIDE)))
+    guardian = pg.transform.scale(guardian, (int((WIDTH + 10)/SIDE), int(HEIGHT/SIDE)))
+    mac = pg.transform.scale(mac, (int((WIDTH + 10)/SIDE), int(HEIGHT/SIDE)))
     #Static positioning of the labyrinth and the characters
     num_line = 0
     empty_cells = [] #List of empty cells
     position_guardian = []
     for line in level:
         num_col = 0
-        y = num_line * int(480/15)
+        y = num_line * int(HEIGHT/SIDE)
         for cell in line:
-            x = num_col * int(640/15)
+            x = num_col * int(WIDTH/15)
             if cell == "w":
                 window.blit(wall, (x, y))
             if cell == "d":
                 window.blit(start, (x, y))
                 position_macgyver = mac.get_rect()
-                position_macgyver.center = (x + int((640/30)), y + int((480/30)))
+                position_macgyver.center = (x + int((WIDTH/(SIDE*2))), y + int((HEIGHT/(SIDE * 2))))
             if cell == "f":
                 window.blit(guardian, (x, y))
                 position_guardian = [x, y]
@@ -71,135 +71,64 @@ def display_level(window, level):
                 empty_cells.append([x, y])
             num_col += 1
         num_line += 1
-    pg.display.flip()
     elements = [mac, position_macgyver, empty_cells, position_guardian]
     return elements
 
 current_level = create_level()
 
-current_window = pg.display.set_mode((640, 480))
+current_window = pg.display.set_mode((WIDTH, HEIGHT))
+pg.display.set_caption(TITLE)
 
-
-
-#display_level(current_level)
-
-class Character():
-    """Creation of main character (Macgyver), and animation of the character and
-
-    the objects to pick."""
-
-    def __init__(self, window, elements_level):
-        """Automatic creation of an instance of the Character class;"""
-        self.elements_level = elements_level
-        #self.position = position
-        self.window = window
-        self.window.blit(self.elements_level[0], self.elements_level[1].topleft)
-        pg.display.flip()
-
-        self.position1 = random.randint(0, len(self.elements_level[2]))
-        self.position2 = random.randint(0, len(self.elements_level[2]))
-        self.position3 = random.randint(0, len(self.elements_level[2]))
-
-        #self.list_coor=list(self.elements_level[1].topleft) # -> répétition, à transformer
-
-        self.got_needle = 0
-        self.got_ether = 0
-        self.got_tube = 0
-
-        self.state = "alive"
-
-    def move_char(self, direction):
-        """Manages the animation of the main character. The inputs are the arrow
-
-        buttons pressed on the keyboard."""
-
-        list_coor = list(self.elements_level[1].topleft)
-        x = list_coor[0]
-        y = list_coor[1]
-
-        if direction == "up" and ([x, y - int(480/15)] in self.elements_level[2] or \
-                                  [x, y - int(480/15)] == self.elements_level[3]):
-            #position = position.move(0,int(480/15))
-            self.elements_level[1] = self.elements_level[1].move(0, -int(480/15))
-            print(self.elements_level[1])
-        elif direction == "down" and ([x, y + int(480/15)] in self.elements_level[2] or \
-                                      [x, y + int(480/15)] == self.elements_level[3]):
-            #position = position.move(0,-int(480/15))
-            self.elements_level[1] = self.elements_level[1].move(0, int(480/15))
-            #print(position)
-            print(self.elements_level[1])
-        elif direction == "left" and ([x - int(640/15), y] in self.elements_level[2] or \
-                                      [x - int(640/15), y] == self.elements_level[3]):
-            #position = position.move(-int(640/15),0)
-            self.elements_level[1] = self.elements_level[1].move(-int(640/15), 0)
-            #print(position)
-            print(self.elements_level[1])
-        elif direction == "right" and ([x + int(640/15), y] in self.elements_level[2] or \
-                                       [x + int(640/15), y] == self.elements_level[3]):
-            #position = position.move(int(640/15),0)
-            self.elements_level[1] = self.elements_level[1].move(int(640/15), 0)
-            #print(position)
-            print(self.elements_level[1])
-        #self.window.blit(self.elements_level[0],self.elements_level[1])
-
-    def display_moves(self, person, obj1, obj2, obj3):
-        """ Displays the new position of the main character, and the objects."""
-
-        list_coor = list(self.elements_level[1].topleft)
-
-        if list_coor != self.elements_level[2][self.position1] and self.got_needle == 0:
-            self.window.blit(obj1, self.elements_level[2][self.position1])
-        else:
-            self.got_needle = 1
-        if list_coor != self.elements_level[2][self.position2] and self.got_ether == 0:
-            self.window.blit(obj2, self.elements_level[2][self.position2])
-        else:
-            self.got_ether = 1
-        if list_coor != self.elements_level[2][self.position3] and self.got_tube == 0:
-            self.window.blit(obj3, self.elements_level[2][self.position3])
-        else:
-            self.got_tube = 1
-
-        if list_coor == self.elements_level[3]:
-            if self.got_needle == 1 and self.got_ether == 1 and self.got_tube == 1:
-                #print("Hourrrrrra !")
-                self.state = "won"
-            else:
-                #print("You looooooose!")
-                self.state = "dead"
-        #print(self.state)
-        self.window.blit(person, list_coor)
-
-        #print("position de macgyver",list_coor)
-        #print("position du guardien",self.elements_level[3])
-        #print(self.got_needle,self.got_ether,self.got_tube)
-        pg.display.flip()
 
 
 MacGyver = Character(current_window, display_level(current_window, current_level))
 
-macgyver = pg.image.load("macgyver.png").convert_alpha()
-needle = pg.image.load("needle.png").convert_alpha()
-ether = pg.image.load("ether.png").convert_alpha()
-tube = pg.image.load("tube.png").convert_alpha()
-youwin = pg.image.load("youwin.png").convert_alpha()
-youlose = pg.image.load("youlose.jpg").convert_alpha()
+macgyver = pg.image.load(image_macgyver).convert_alpha()
+needle = pg.image.load(image_needle).convert_alpha()
+ether = pg.image.load(image_ether).convert_alpha()
+tube = pg.image.load(image_tube).convert_alpha()
+youwin = pg.image.load(image_youwin).convert()
+youlose = pg.image.load(image_youlose).convert()
 
-macgyver = pg.transform.scale(macgyver, (int(650/15), int(480/15)))
-needle = pg.transform.scale(needle, (int(650/15), int(480/15)))
-ether = pg.transform.scale(ether, (int(650/15), int(480/15)))
-tube = pg.transform.scale(tube, (int(650/15), int(480/15)))
-youwin = pg.transform.scale(youwin, (640, 480))
-youlose = pg.transform.scale(youlose, (640, 480))
+macgyver = pg.transform.scale(macgyver, (int((WIDTH + 10)/ SIDE), int(HEIGHT/SIDE)))
+needle = pg.transform.scale(needle, (int((WIDTH + 10)/SIDE), int(HEIGHT/SIDE)))
+ether = pg.transform.scale(ether, (int((WIDTH + 10)/SIDE), int(HEIGHT/SIDE)))
+tube = pg.transform.scale(tube, (int((WIDTH + 10)/SIDE), int(HEIGHT/SIDE)))
+youwin = pg.transform.scale(youwin, (WIDTH, HEIGHT))
+youlose = pg.transform.scale(youlose, (WIDTH, HEIGHT))
 
+menu = pg.image.load(image_menu).convert()
+menu = pg.transform.scale(menu, (WIDTH, HEIGHT))
 
 #Here is the game loop :
 
 keep_open = 1
+keep_menu = 1
 MacGyver.display_moves(macgyver, needle, ether, tube)
+MacGyver.state = "alive"
 
+current_window.blit(menu, (0, 0))
+pg.display.flip()
+
+#Loop for the menu
+while keep_menu:
+    pg.time.Clock().tick(30)
+    for event in pg.event.get():
+        if event.type == QUIT:
+            keep_menu = 0
+            keep_open = 0
+        if event.type == KEYDOWN:
+            if event.key == K_F1:
+                keep_menu = 0
+
+if keep_open:
+    display_level(current_window, current_level)
+    MacGyver.display_moves(macgyver, needle, ether, tube)
+
+#Actual game loop
 while keep_open:
     pg.time.Clock().tick(30)
+    pg.display.flip()
     for event in pg.event.get():
         if event.type == QUIT:
             keep_open = 0
