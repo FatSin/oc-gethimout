@@ -28,7 +28,7 @@ def create_level():
                     lines.append(cell)
             level.append(lines)
     #print("Here is the labyrinth as a list:",level)
-    #print("Here is the 4rth row:",level[3])
+    #print("Here is the 4rth row:", level[3])
     return level
 
 
