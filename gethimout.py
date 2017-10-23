@@ -16,9 +16,9 @@ from constants import *
 pg.init()
 
 def create_level():
-    """Generates of a labyrinth from a static txt file
+    """Generation of a labyrinth from a static txt file
 
-    as multi-dimensional list."""
+    in the format of a multi-dimensional list."""
     level = []
     with open(LEVEL_FILE) as file:
         for line in file:
@@ -33,7 +33,7 @@ def create_level():
 
 
 def display_level(window, level):
-    """2D-display of the generated labyrinth."""
+    """2D-display of the previously generated labyrinth."""
 
     background = pg.image.load(image_background).convert()
     background = pg.transform.scale(background, (WIDTH, HEIGHT))
@@ -83,14 +83,14 @@ pg.display.set_caption(TITLE)
 
 MacGyver = Character(current_window, display_level(current_window, current_level))
 
-macgyver = pg.image.load(image_macgyver).convert_alpha()
+macg = pg.image.load(image_macgyver).convert_alpha()
 needle = pg.image.load(image_needle).convert_alpha()
 ether = pg.image.load(image_ether).convert_alpha()
 tube = pg.image.load(image_tube).convert_alpha()
 youwin = pg.image.load(image_youwin).convert()
 youlose = pg.image.load(image_youlose).convert()
 
-macgyver = pg.transform.scale(macgyver, (int((WIDTH + 10)/ SIDE), int(HEIGHT/SIDE)))
+macg = pg.transform.scale(macg, (int((WIDTH + 10)/ SIDE), int(HEIGHT/SIDE)))
 needle = pg.transform.scale(needle, (int((WIDTH + 10)/SIDE), int(HEIGHT/SIDE)))
 ether = pg.transform.scale(ether, (int((WIDTH + 10)/SIDE), int(HEIGHT/SIDE)))
 tube = pg.transform.scale(tube, (int((WIDTH + 10)/SIDE), int(HEIGHT/SIDE)))
@@ -104,7 +104,7 @@ menu = pg.transform.scale(menu, (WIDTH, HEIGHT))
 
 keep_open = 1
 keep_menu = 1
-MacGyver.display_moves(macgyver, needle, ether, tube)
+MacGyver.display_moves(macg, needle, ether, tube)
 MacGyver.state = "alive"
 
 current_window.blit(menu, (0, 0))
@@ -123,7 +123,7 @@ while keep_menu:
 
 if keep_open:
     display_level(current_window, current_level)
-    MacGyver.display_moves(macgyver, needle, ether, tube)
+    MacGyver.display_moves(macg, needle, ether, tube)
 
 #Actual game loop
 while keep_open:
@@ -144,7 +144,7 @@ while keep_open:
                     MacGyver.move_char("right")
 
                 display_level(current_window, current_level)
-                MacGyver.display_moves(macgyver, needle, ether, tube)
+                MacGyver.display_moves(macg, needle, ether, tube)
         elif MacGyver.state == "dead":
             current_window.blit(youlose, (0, 0))
             pg.display.flip()

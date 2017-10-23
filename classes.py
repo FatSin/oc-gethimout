@@ -22,9 +22,9 @@ class Character():
         self.window = window
         self.window.blit(self.elements_level[0], self.elements_level[1].topleft)
 
-        self.position1 = random.randint(0, len(self.elements_level[2]))
-        self.position2 = random.randint(0, len(self.elements_level[2]))
-        self.position3 = random.randint(0, len(self.elements_level[2]))
+        self.position1 = random.randint(0, len(self.elements_level[2]) - 1)
+        self.position2 = random.randint(0, len(self.elements_level[2]) - 1)
+        self.position3 = random.randint(0, len(self.elements_level[2]) - 1)
 
         self.got_needle = 0
         self.got_ether = 0
@@ -65,7 +65,7 @@ class Character():
             #print(position)
             print(self.elements_level[1])
         #self.window.blit(self.elements_level[0],self.elements_level[1])
-
+		
     def display_moves(self, person, obj1, obj2, obj3):
         """ Displays the new position of the main character, and the objects."""
 
