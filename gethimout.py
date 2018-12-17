@@ -97,29 +97,164 @@ tube = pg.transform.scale(tube, (int((WIDTH + 10)/SIDE), int(HEIGHT/SIDE)))
 youwin = pg.transform.scale(youwin, (WIDTH, HEIGHT))
 youlose = pg.transform.scale(youlose, (WIDTH, HEIGHT))
 
+#Load menu image
 menu = pg.image.load(image_menu).convert()
 menu = pg.transform.scale(menu, (WIDTH, HEIGHT))
+#Load start image
+options = pg.image.load(image_options).convert()
+options = pg.transform.scale(options, (WIDTH, HEIGHT))
+#Load score image
+scores = pg.image.load(image_scores).convert()
+scores = pg.transform.scale(scores, (WIDTH, HEIGHT))
+#Load build image
+build = pg.image.load(image_build).convert()
+build = pg.transform.scale(build, (WIDTH, HEIGHT))
+
 
 #Here is the game loop :
 
 keep_open = 1
 keep_menu = 1
+keep_start, keep_scores, keep_build = 0, 0, 0
 MacGyver.display_moves(macg, needle, ether, tube)
 MacGyver.state = "alive"
 
 current_window.blit(menu, (0, 0))
-pg.display.flip()
+#pg.display.flip()
+
+print(keep_menu)
+print(keep_open)
+print(keep_start)
+print(keep_scores)
+print(keep_build)
 
 #Loop for the menu
 while keep_menu:
     pg.time.Clock().tick(30)
+    pg.display.flip()
     for event in pg.event.get():
         if event.type == QUIT:
             keep_menu = 0
             keep_open = 0
+            print('quit from ')
         if event.type == KEYDOWN:
-            if event.key == K_F1:
+            if event.key == K_F5:
                 keep_menu = 0
+                keep_open = 0
+                print('quit')
+            # Start a new game
+            elif event.key == K_F1:
+                keep_start = 1
+                #keep_menu = 0
+
+                current_window.blit(options, (0, 0))
+                pg.display.flip()
+                pg.event.clear()
+                while keep_start:
+                    pg.time.Clock().tick(30)
+                    for event in pg.event.get():
+                        if event.type == QUIT:
+                            keep_start = 0
+                            keep_menu = 0
+                            keep_open = 0
+                            print('quit from start')
+
+                        elif event.key == K_F5:
+                            keep_start = 0
+                            current_window.blit(menu, (0, 0))
+                            pg.display.flip()
+                            print('back to menu')
+                        print(keep_menu)
+                        print(keep_open)
+                        print(keep_start)
+                        print(keep_scores)
+                        print(keep_build)
+
+            elif event.key == K_F2:
+                keep_scores = 1
+                current_window.blit(scores, (0, 0))
+                pg.display.flip()
+                pg.event.clear()
+                while keep_scores:
+                    pg.time.Clock().tick(30)
+                    for event in pg.event.get():
+                        if event.type == QUIT:
+                            keep_scores = 0
+                            keep_menu = 0
+                            keep_open = 0
+                            print('quit from start')
+
+                        elif event.key == K_F5:
+                            keep_scores = 0
+                            current_window.blit(menu, (0, 0))
+                            pg.display.flip()
+                            print('back to menu')
+                        print(keep_menu)
+                        print(keep_open)
+                        print(keep_start)
+                        print(keep_scores)
+                        print(keep_build)
+            elif event.key == K_F3:
+                keep_build = 1
+                keep_menu = 0
+                current_window.blit(build, (0, 0))
+                pg.display.flip()
+                pg.event.clear()
+                while keep_build:
+                    pg.time.Clock().tick(30)
+                    for event in pg.event.get():
+                        if event.type == QUIT:
+                            keep_build = 0
+                            keep_menu = 0
+                            keep_open = 0
+                            print('quit from start')
+
+                        elif event.key == K_F5:
+                            keep_build = 0
+                            current_window.blit(menu, (0, 0))
+                            pg.display.flip()
+                            print('back to menu')
+                        print(keep_menu)
+                        print(keep_open)
+                        print(keep_start)
+                        print(keep_scores)
+                        print(keep_build)
+
+"""
+print('Option chosen')
+print(keep_menu)
+print(keep_open)
+print(keep_start)
+print(keep_scores)
+print(keep_build)
+
+if keep_start:
+    keep_start = 1
+    current_window.blit(options, (0, 0))
+    pg.display.flip()
+
+while keep_start:
+    pg.time.Clock().tick(30)
+    for event in pg.event.get():
+        if event.type == QUIT:
+            keep_start = 0
+            keep_menu = 0
+            keep_open = 0
+            print('quit from start')
+
+        elif event.type == KEYDOWN:
+            if event.key == K_F5:
+                keep_start = 0
+                current_window.blit(menu, (0, 0))
+                pg.display.flip()
+                print('back to menu')
+
+print(keep_menu)
+print(keep_open)
+print(keep_start)
+print(keep_scores)
+print(keep_build)
+
 
 if keep_open:
     display_level(current_window, current_level)
@@ -151,3 +286,4 @@ while keep_open:
         elif MacGyver.state == "won":
             current_window.blit(youwin, (0, 0))
             pg.display.flip()
+"""
