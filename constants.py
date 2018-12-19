@@ -15,6 +15,10 @@ LEVEL3_FILE = "level3.txt"
 LEVEL4_FILE = "level4.txt"
 LEVEL5_FILE = "level5.txt"
 
+LENGTHX = 15
+LENGTHY = 15
+LEVEL_NUMBER = 5
+
 difficulty = ["EASY", "MEDIUM", "HARD"]
 characters = ["macgyver", "leela", "homer"]
 

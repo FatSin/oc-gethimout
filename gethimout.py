@@ -13,6 +13,7 @@ from pygame.locals import *
 
 from classes import *
 from constants import *
+from generate_level import *
 
 pg.init()
 
@@ -347,7 +348,13 @@ print(keep_build)
 """
 
 #Level and character initialization
-levels = [LEVEL1_FILE, LEVEL2_FILE, LEVEL3_FILE, LEVEL4_FILE, LEVEL5_FILE]
+#levels = ["random_level.txt", LEVEL1_FILE, LEVEL2_FILE, LEVEL3_FILE, LEVEL4_FILE, LEVEL5_FILE]
+levels = []
+
+for num in range(0,LEVEL_NUMBER):
+    filename = 'random_level{0}.txt'.format(num+1)
+    generate(filename)
+    levels.append(filename)
 
 for level in levels:
     current_level = create_level(level)
