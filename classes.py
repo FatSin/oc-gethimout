@@ -31,6 +31,7 @@ class Character():
         self.got_tube = 0
 
         self.state = "alive"
+        self.lives = 3
 
     def move_char(self, direction):
         """Manages the animation of the main character. The inputs are the arrow
@@ -93,6 +94,8 @@ class Character():
                 self.state = "dead"
         #print(self.state)
         self.window.blit(person, list_coor)
+
+
 
         #print("position de macgyver",list_coor)
         #print("position du guardien",self.elements_level[3])
