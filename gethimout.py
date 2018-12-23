@@ -64,6 +64,7 @@ def display_level(window, level):
                 window.blit(start, (x, y))
                 position_macgyver = mac.get_rect()
                 position_macgyver.center = (x + int((WIDTH/(SIDE*2))), y + int((HEIGHT/(SIDE * 2))))
+                empty_cells.append([x, y])
             if cell == "f":
                 window.blit(guardian, (x, y))
                 position_guardian = [x, y]
@@ -362,6 +363,7 @@ for level in levels:
     MacGyver.display_moves(macg, needle, ether, tube)
     MacGyver.state = "alive"
 
+
     if keep_open:
         display_level(current_window, current_level)
         MacGyver.display_moves(opt[0], needle, ether, tube)
@@ -369,6 +371,7 @@ for level in levels:
         for life in range(0, MacGyver.lives):
             current_window.blit(heart, (lifex, SIDE))
             lifex += SIDE * 2
+        current_window.blit(money, (7 * WIDTH / 8, SIDE))
         keep_levels = 1
 
     #Actual game loop
@@ -396,6 +399,7 @@ for level in levels:
                     for life in range(0, MacGyver.lives):
                         current_window.blit(heart, (lifex, SIDE))
                         lifex += SIDE*2
+                    current_window.blit(money, (7*WIDTH/8, SIDE))
                     pg.display.flip()
             elif MacGyver.state == "dead":
                 current_window.blit(youlose, (0, 0))

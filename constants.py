@@ -35,7 +35,7 @@ image_ether = "images/ether.png"
 image_tube = "images/tube.png"
 image_heart = "images/heart.png"
 image_skull = "images/skull.png"
-image_money = "images/money1.png"
+image_money = "images/money2.png"
 image_gift = "images/gift.png"
 
 
