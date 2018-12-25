@@ -32,7 +32,7 @@ class Character():
 
         self.state = "alive"
         self.lives = 3
-        self.coins = 0
+        self.score = 0
 
     def move_char(self, direction):
         """Manages the animation of the main character. The inputs are the arrow

@@ -7,6 +7,8 @@ This file describes the constants used by gethimout.py
 
 WIDTH = 640
 HEIGHT = 480
+BANDY = 70
+
 SIDE = 15
 TITLE = "Get him out !"
 LEVEL1_FILE = "level1.txt"
@@ -28,7 +30,7 @@ image_start = "images/start.png"
 image_guardian = "images/guardian.png"
 image_macgyver = "images/macgyver.png"
 image_leela = "images/leela.png"
-image_homer = "images/homer.jpg"
+image_homer = "images/homer2.png"
 
 image_needle = "images/needle.png"
 image_ether = "images/ether.png"
@@ -46,6 +48,7 @@ image_options = "images/options.png"
 image_scores = "images/scores.png"
 image_build = "images/start.png"
 image_expl = "images/expl.png"
+image_loading = "images/loading.png"
 image_easy = "images/easy.png"
 image_medium = "images/medium.png"
 image_hard = "images/hard.png"
