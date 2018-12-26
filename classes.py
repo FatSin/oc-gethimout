@@ -10,6 +10,8 @@ import random
 import pygame as pg
 from pygame.locals import *
 
+from constants import *
+
 class Character():
     """Creation of main character (Macgyver), and animation of the character and
 
@@ -25,10 +27,12 @@ class Character():
         self.position1 = random.randint(0, len(self.elements_level[2]) - 1)
         self.position2 = random.randint(0, len(self.elements_level[2]) - 1)
         self.position3 = random.randint(0, len(self.elements_level[2]) - 1)
+        self.position4 = random.randint(0, len(self.elements_level[2]) - 1)
 
         self.got_needle = 0
         self.got_ether = 0
         self.got_tube = 0
+        self.got_gift = 0
 
         self.state = "alive"
         self.lives = 3
@@ -68,8 +72,17 @@ class Character():
             print(self.elements_level[1])
         #self.window.blit(self.elements_level[0],self.elements_level[1])
 		
-    def display_moves(self, person, obj1, obj2, obj3):
+    def display_moves(self, person, obj1, obj2, obj3, obj4):
         """ Displays the new position of the main character, and the objects."""
+
+
+
+        heart = pg.image.load(image_heart).convert_alpha()
+        heart = pg.transform.scale(heart, (int(WIDTH/9), int(HEIGHT /8)))
+        skull = pg.image.load(image_skull).convert_alpha()
+        skull = pg.transform.scale(skull, (int(WIDTH/9), int(HEIGHT /8)))
+        money = pg.image.load(image_money).convert_alpha()
+        money = pg.transform.scale(money, (int(WIDTH/9), int(HEIGHT /8)))
 
         list_coor = list(self.elements_level[1].topleft)
 
@@ -85,6 +98,27 @@ class Character():
             self.window.blit(obj3, self.elements_level[2][self.position3])
         else:
             self.got_tube = 1
+
+        if list_coor != self.elements_level[2][self.position4] and self.got_gift == 0:
+            self.window.blit(obj4, self.elements_level[2][self.position4])
+        else:
+            if self.got_gift == 0:
+                ind = random.randint(0,2)
+                if ind == 0:
+                    self.window.blit(heart, (WIDTH/2, HEIGHT/2))
+                    if self.lives < 3:
+                        self.lives+=1
+                elif ind == 1:
+                    self.window.blit(skull, (WIDTH/2, HEIGHT/2))
+                    self.lives-=1
+                    if self.lives < 0:
+                        self.state = "dead"
+                elif ind == 2:
+                    self.window.blit(money, (WIDTH/2, HEIGHT/2))
+                    self.score += 100
+            self.got_gift = 1
+            #else:
+            #    self.got_gift = 1
 
         if list_coor == self.elements_level[3]:
             if self.got_needle == 1 and self.got_ether == 1 and self.got_tube == 1:

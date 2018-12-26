@@ -389,41 +389,7 @@ while keep_menu:
                         print(keep_scores)
                         print(keep_build)
 
-"""
-print('Option chosen')
-print(keep_menu)
-print(keep_open)
-print(keep_start)
-print(keep_scores)
-print(keep_build)
 
-if keep_start:
-    keep_start = 1
-    current_window.blit(options, (0, 0))
-    pg.display.flip()
-
-while keep_start:
-    pg.time.Clock().tick(30)
-    for event in pg.event.get():
-        if event.type == QUIT:
-            keep_start = 0
-            keep_menu = 0
-            keep_open = 0
-            print('quit from start')
-
-        elif event.type == KEYDOWN:
-            if event.key == K_F5:
-                keep_start = 0
-                current_window.blit(menu, (0, 0))
-                pg.display.flip()
-                print('back to menu')
-
-print(keep_menu)
-print(keep_open)
-print(keep_start)
-print(keep_scores)
-print(keep_build)
-"""
 
 # Score Font
 #myfont = pg.font.SysFont(None, 48)
@@ -451,22 +417,22 @@ for level in levels:
     #counter = 30
 
 
-
     if keep_open:
         current_level = create_level(level)
         MacGyver = Character(current_window, display_level(current_window, current_level))
-        MacGyver.display_moves(macg, needle, ether, tube)
+        MacGyver.display_moves(macg, needle, ether, tube, gift)
         MacGyver.state = "alive"
-        counter = 30
+        MacGyver.score = score_value
+        counter = 60
 
         display_level(current_window, current_level)
-        MacGyver.display_moves(opt[0], needle, ether, tube)
+        MacGyver.display_moves(opt[0], needle, ether, tube, gift)
         lifex = SIDE
         for life in range(0, MacGyver.lives):
             current_window.blit(heart, (lifex, HEIGHT+SIDE))
             lifex += SIDE * 4
         current_window.blit(money, (7 * WIDTH / 8, HEIGHT+SIDE))
-        score = myfont.render(str(score_value), True, (255, 255, 0), (0, 0, 0))
+        score = myfont.render(str(MacGyver.score), True, (255, 255, 0), (0, 0, 0))
         current_window.blit(score, (6.3 * WIDTH / 8, HEIGHT+SIDE))
         tictac = myfont.render('00:{0}'.format(str(counter)), True, (255, 255, 0), (0, 0, 0))
         current_window.blit(tictac, (3.5 * WIDTH / 8, HEIGHT + SIDE))
@@ -504,7 +470,7 @@ for level in levels:
                         MacGyver.move_char("right")
 
                     display_level(current_window, current_level)
-                    MacGyver.display_moves(opt[0], needle, ether, tube)
+                    MacGyver.display_moves(opt[0], needle, ether, tube, gift)
                     """
                     lifex = SIDE
                     current_window.blit(stripe, (0, HEIGHT))
@@ -543,9 +509,11 @@ for level in levels:
                 current_window.blit(youwin, (0, 0))
                 pg.display.flip()
                 time.sleep(2)
-                name = save_name(current_window)
                 keep_levels = 0
+                score_value = MacGyver.score
                 score_value += 100
+                if level == levels[4]:
+                    name = save_name(current_window)
 
             if keep_levels:
                 lifex = SIDE
@@ -554,9 +522,10 @@ for level in levels:
                     current_window.blit(heart, (lifex, HEIGHT + SIDE))
                     lifex += SIDE * 4
                 current_window.blit(money, (7 * WIDTH / 8, HEIGHT + SIDE))
-                score = myfont.render(str(score_value), True, (255, 255, 0), (0, 0, 0))
+                score = myfont.render(str(MacGyver.score), True, (255, 255, 0), (0, 0, 0))
                 current_window.blit(score, (6.2 * WIDTH / 8, HEIGHT + SIDE))
                 pg.display.flip()
+
 
 #name = str(input_name)
 #name = textinput.get_text()

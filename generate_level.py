@@ -37,7 +37,7 @@ def generate(custom_file):
             #T_cur.append("X{1}Y{0}".format(i+1,j+1))
             T_cur.append([j,i,"none"])
         T.append(T_cur)
-    print(T)
+    #print(T)
 
     T_bord = []
 
@@ -56,13 +56,13 @@ def generate(custom_file):
     for tile in T[len_y-1]:
         T_bord.append(tile)
 
-    print ('T bord :')
-    print(T_bord)
+    #print ('T bord :')
+    #print(T_bord)
 
     #coor_d = random.choice(T_bord)
     #coor_cur = [coor_d[0],coor_d[1], "0"]
 
-    print('d is in {0},{1}'.format(coor_d[0],coor_d[1] ))
+    #print('d is in {0},{1}'.format(coor_d[0],coor_d[1] ))
 
     for tilelist in T:
         for tile in tilelist:
@@ -100,10 +100,10 @@ def generate(custom_file):
     while create:
 
         dir = random.choice(directions)
-        print('directions restantes :{0}'.format(directions))
-        print("coordonnées départ")
-        print(coor_d)
-        print(coor_cur)
+        #print('directions restantes :{0}'.format(directions))
+        #print("coordonnées départ")
+        #print(coor_d)
+        #print(coor_cur)
         x_temp, y_temp = coor_cur[0], coor_cur[1]
         move = 0
         good_dir = 0
@@ -239,19 +239,19 @@ def generate(custom_file):
                 force_move = 0
 
         if move:
-            print('coor temp {0},{1}'.format(x_temp, y_temp))
-            print('coor de d {0},{1}'.format(coor_d[0], coor_d[1]))
+            #print('coor temp {0},{1}'.format(x_temp, y_temp))
+            #print('coor de d {0},{1}'.format(coor_d[0], coor_d[1]))
 
 
 
 
             #if (x_temp != coor_d[0] or y_temp != coor_d[1]):
-            print('correct move')
+            #print('correct move')
             #print('coor temp {0},{1}'.format(x_temp, y_temp))
             coor_cur[0] = x_temp
             coor_cur[1] = y_temp
-            print('nouveau coor_cur {0}'.format(coor_cur))
-            print('coor finales {0},{1}'.format(x_temp, y_temp))
+            #print('nouveau coor_cur {0}'.format(coor_cur))
+            #print('coor finales {0},{1}'.format(x_temp, y_temp))
             if coor_cur[2] == "f":
                 create = 0
 
@@ -278,13 +278,13 @@ def generate(custom_file):
             #directions = ['up', 'down', 'left', 'right', dir_horiz, dir_vert]
             directions = ['up', 'down', 'left', 'right']
         else:
-            print('incorrect move')
+            #print('incorrect move')
             directions.pop(directions.index(dir))
             if len(directions) == 0:
                 directions = [dir_horiz, dir_vert]
                 force_move = 1
-                print('Move is forced !')
-        print(T)
+                #print('Move is forced !')
+        #print(T)
 
     for tilelist in T:
         for tile in tilelist:
@@ -305,10 +305,10 @@ def generate(custom_file):
                 else:
                     tile[2] = "w"
 
-    print('final result :')
-    print(T)
-    print('Le bord :')
-    print(T_bord)
+    #print('final result :')
+    #print(T)
+    #print('Le bord :')
+    #print(T_bord)
 
     with open(custom_file, "w") as file:
         for tilelist in T:

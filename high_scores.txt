@@ -17,3 +17,7 @@ zefzefezd,MacGyver,0
 Matteo,MacGyver,300
 Coco,MacGyver,0
 Claudia,MacGyver,0
+mqs,MacGyver,0
+Dolittle,Leela,500
+Mellie,MacGyver,0
+aefief,MacGyver,0

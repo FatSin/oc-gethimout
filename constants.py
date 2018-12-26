@@ -38,7 +38,7 @@ image_tube = "images/tube.png"
 image_heart = "images/heart.png"
 image_skull = "images/skull.png"
 image_money = "images/money2.png"
-image_gift = "images/gift.png"
+image_gift = "images/gift0.png"
 
 
 image_youwin = "images/youwin.png"
